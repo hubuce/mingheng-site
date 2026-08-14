@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-labelledby="title">
+  <title id="title">明衡标志</title>
+  <defs><mask id="cut"><rect width="420" height="420" fill="#fff"/><circle cx="288" cy="140" r="29" fill="#000"/></mask></defs>
+  <circle cx="210" cy="210" r="145" fill="none" stroke="#b18a4b" stroke-width="4"/>
+  <circle cx="210" cy="210" r="124" fill="none" stroke="#172724" stroke-width="2" opacity=".18"/>
+  <path d="M210 102v192M112 210h196M185 294h50" fill="none" stroke="#172724" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="154" cy="140" r="30" fill="#b18a4b"/>
+  <circle cx="266" cy="140" r="34" fill="#b18a4b" mask="url(#cut)"/>
+  <circle cx="210" cy="210" r="11" fill="#b18a4b"/>
+  <circle cx="112" cy="210" r="7" fill="#b18a4b"/><circle cx="308" cy="210" r="7" fill="#b18a4b"/>
+</svg>
