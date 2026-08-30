@@ -33,16 +33,16 @@ const formNote = document.getElementById('form-note');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   const data = new FormData(form);
-  const subject = `明衡咨询预约｜${data.get('type')}｜${data.get('name')}`;
+  const subject = `明衡奇门测算预约｜${data.get('type')}｜${data.get('name')}`;
   const message = [
     `称呼：${data.get('name')}`,
     `联系方式：${data.get('contact')}`,
-    `咨询类型：${data.get('type')}`,
+    `测算类型：${data.get('type')}`,
     '',
-    '希望解决的一件事：',
+    '最希望测算的一件事：',
     data.get('question'),
     '',
-    '我理解本咨询仅供个人思考与决策参考。'
+    '我理解测算结果仅供传统文化研究、个人思考与决策参考。'
   ].join('\n');
 
   formNote.textContent = '正在打开邮箱应用。如未自动打开，请直接发送邮件至 info@mcmsdd.com。';
@@ -54,16 +54,17 @@ const dialogContent = document.getElementById('dialog-content');
 const dialogCopy = {
   privacy: `
     <h2>隐私说明</h2>
-    <p>明衡仅为回复咨询及履行约定服务处理必要信息。未经允许，不向无关第三方公开客户的出生信息、联系方式、住址、户型、家庭情况或商业资料。</p>
+    <p>明衡仅为回复测算预约及履行约定服务处理必要信息。未经允许，不向无关第三方公开来问者的出生信息、联系方式、住址、户型、家庭情况或商业资料。</p>
     <p>本网站为静态页面，表单内容不会存储在网站服务器；点击提交后由访客设备上的邮箱应用发送。请勿在首次接洽时提交身份证、银行账户、病历等无关敏感信息。</p>
     <p>客户可通过 info@mcmsdd.com 联系我们查询、更正或删除其已提交的信息。</p>`,
   terms: `
-    <h2>服务说明</h2>
+    <h2>测算说明</h2>
     <ul>
-      <li>咨询以客户主动提供的真实资料及具体问题为基础。</li>
-      <li>咨询结论属于分析与建议，不代表对未来事件或结果的保证。</li>
+      <li>奇门问事遵循一事一局，所问事项应当真实、具体、明确。</li>
+      <li>测算属于传统文化研究与民俗咨询，结论不代表对未来事件或结果的保证。</li>
+      <li>同一事项不宜在短期内反复起局，以免信息混杂。</li>
       <li>涉及医疗、法律、投资等事项，请同时咨询相应持牌专业人士。</li>
-      <li>正式服务的内容、费用、时间和交付方式以双方确认的委托约定为准。</li>
+      <li>正式测算的内容、费用、时间和交付方式以双方确认的约定为准。</li>
       <li>明衡有权拒绝涉及违法、伤害他人、侵犯隐私或超出服务能力的委托。</li>
     </ul>`
 };
