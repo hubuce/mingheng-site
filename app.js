@@ -52,6 +52,23 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 document.getElementById('year').textContent = new Date().getFullYear();
 
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  const startHeroVideo = () => {
+    heroVideo.muted = true;
+    const playRequest = heroVideo.play();
+    if (playRequest && typeof playRequest.catch === 'function') playRequest.catch(() => {});
+  };
+
+  startHeroVideo();
+  document.addEventListener('pointerdown', startHeroVideo, { once: true, passive: true });
+  document.addEventListener('touchstart', startHeroVideo, { once: true, passive: true });
+  document.addEventListener('keydown', startHeroVideo, { once: true });
+  document.addEventListener('visibilitychange', () => {
+    if (!document.hidden) startHeroVideo();
+  });
+}
+
 const form = document.getElementById('consult-form');
 const formNote = document.getElementById('form-note');
 form.addEventListener('submit', (event) => {
