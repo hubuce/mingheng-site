@@ -52,9 +52,37 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 document.getElementById('year').textContent = new Date().getFullYear();
 
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-  document.querySelectorAll('.hero-video').forEach((video) => video.pause());
+const heroVideo = document.querySelector('.hero-video');
+const videoControl = document.querySelector('.video-control');
+const videoControlIcon = videoControl.querySelector('span');
+const videoControlLabel = videoControl.querySelector('b');
+
+function syncVideoControl() {
+  const paused = heroVideo.paused;
+  const label = paused ? videoControl.dataset.play : videoControl.dataset.pause;
+  videoControlIcon.textContent = paused ? '▶' : 'Ⅱ';
+  videoControlLabel.textContent = label;
+  videoControl.setAttribute('aria-label', label);
 }
+
+const motionReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (motionReduced) {
+  heroVideo.pause();
+}
+
+heroVideo.addEventListener('play', syncVideoControl);
+heroVideo.addEventListener('pause', syncVideoControl);
+videoControl.addEventListener('click', async () => {
+  if (heroVideo.paused) {
+    body.classList.add('motion-enabled');
+    try { await heroVideo.play(); } catch (error) { /* the control remains available for another attempt */ }
+  } else {
+    heroVideo.pause();
+  }
+  syncVideoControl();
+});
+if (!motionReduced) heroVideo.play().catch(syncVideoControl);
+syncVideoControl();
 
 const form = document.getElementById('consult-form');
 const formNote = document.getElementById('form-note');
