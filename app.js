@@ -52,6 +52,10 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 document.getElementById('year').textContent = new Date().getFullYear();
 
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.hero-video').forEach((video) => video.pause());
+}
+
 const form = document.getElementById('consult-form');
 const formNote = document.getElementById('form-note');
 form.addEventListener('submit', (event) => {
