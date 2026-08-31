@@ -91,7 +91,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
 .intro-grid { display: grid; grid-template-columns: 90px 1.1fr .9fr; gap: 50px; align-items: center; }
 .intro-number { margin: 0; color: rgba(141,32,29,.13); font-family: var(--serif); font-size: 88px; line-height: 1; }
 .intro-grid h2 { margin: 0; font-size: 42px; line-height: 1.45; letter-spacing: .08em; }
-.intro-grid > p:last-child { margin: 0; color: var(--muted); line-height: 2; }
+.intro-grid > p:last-child { margin: 0; color: var(--muted); line-height: 2; text-align: justify; text-align-last: left; text-justify: inter-ideograph; }
 
 .section { padding: 125px 0; }
 .question-heading, .section-heading { max-width: 770px; margin-bottom: 65px; }
