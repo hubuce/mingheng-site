@@ -257,4 +257,4 @@ dialog { width: min(680px, calc(100% - 36px)); padding: 45px; color: var(--ink);
   :lang(en) .plan-card { min-height: auto; }
 }
 
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; }.reveal { opacity: 1; transform: none; }.hero-video { display: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { animation: none !important; transition: none !important; }.reveal { opacity: 1; transform: none; } }
