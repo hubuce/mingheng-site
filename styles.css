@@ -161,12 +161,13 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
 .button-outline { min-height: 46px; color: var(--ivory); border-color: rgba(247,240,227,.45); }
 
 .about { color: var(--ivory); background: var(--night-2); }
-.about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 120px; align-items: center; }
-.about-mark { min-height: 520px; display: grid; place-items: center; position: relative; border: 1px solid rgba(196,155,97,.28); background: radial-gradient(circle, rgba(141,32,29,.3), transparent 55%); }
-.about-mark::before { content: ""; position: absolute; inset: 14px; border: 1px solid rgba(196,155,97,.12); }
-.about-mark img { width: 270px; filter: invert(1); opacity: .87; }
-.about-mark p { position: absolute; bottom: 23px; margin: 0; color: var(--gold); font-family: var(--serif); letter-spacing: .45em; }
-.corner { position: absolute; width: 50px; height: 50px; border-color: var(--red-bright); }.corner-a { left: -1px; top: -1px; border-left: 2px solid; border-top: 2px solid; }.corner-b { right: -1px; bottom: -1px; border-right: 2px solid; border-bottom: 2px solid; }
+.about-grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: 75px; align-items: center; }
+.about-photo { width: 100%; max-width: 680px; margin: 0; position: relative; overflow: hidden; border: 1px solid rgba(196,155,97,.28); background: var(--night); }
+.about-photo::after { content: ""; position: absolute; inset: 13px; z-index: 1; border: 1px solid rgba(247,240,227,.16); pointer-events: none; }
+.about-photo img { width: 100%; aspect-ratio: 4 / 3; display: block; object-fit: cover; }
+.about-photo figcaption { position: absolute; inset: auto 0 0; z-index: 2; padding: 48px 28px 24px; display: flex; flex-direction: column; gap: 6px; color: var(--ivory); background: linear-gradient(transparent, rgba(10,8,6,.9)); }
+.about-photo figcaption strong { font-family: var(--serif); font-size: 19px; font-weight: 500; letter-spacing: .1em; }
+.about-photo figcaption span { color: rgba(247,240,227,.65); font-size: 10px; letter-spacing: .14em; }
 .about-copy > p:not(.eyebrow) { color: rgba(247,240,227,.6); line-height: 2.05; }
 .about-copy blockquote { margin: 28px 0; padding: 18px 0 18px 24px; color: var(--gold); border-left: 2px solid var(--red); font-family: var(--serif); letter-spacing: .08em; }
 .about-values { display: flex; gap: 10px; flex-wrap: wrap; }.about-values span { padding: 7px 17px; border: 1px solid rgba(247,240,227,.18); font-size: 11px; letter-spacing: .16em; }
@@ -246,7 +247,7 @@ dialog { width: min(680px, calc(100% - 36px)); padding: 45px; color: var(--ink);
   .service-card { min-height: auto; padding: 32px 25px; }.service-card > p { min-height: auto; }.service-card h3 { margin-top: 32px; }.services::before { font-size: 100px; }
   .scope-list div { min-height: 115px; }.steps li { grid-template-columns: 42px 1fr; gap: 18px; }.method-symbol { font-size: 330px; }
   .plan-card { min-height: auto; }.advisor-card { padding: 31px 24px; }
-  .about-mark { min-height: 380px; }.about-mark img { width: 205px; }
+  .about-photo figcaption { padding: 42px 20px 20px; }.about-photo figcaption strong { font-size: 17px; }.about-photo figcaption span { line-height: 1.7; }
   .field-row { grid-template-columns: 1fr; gap: 0; }.consult-form { padding: 30px 22px; }.form-title span { font-size: 21px; }
   .footer-top { grid-template-columns: 1fr; gap: 22px; }.footer-top > p, .footer-top > a:last-child { text-align: left; }.footer-bottom { align-items: flex-start; gap: 14px; flex-direction: column; }.footer-bottom button { margin: 0 18px 0 0; }
   :lang(en) .brand strong { font-size: 17px; }
