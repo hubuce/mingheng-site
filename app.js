@@ -54,12 +54,21 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const heroVideo = document.querySelector('.hero-video');
 if (heroVideo) {
+  const heroPlaybackRate = 0.65;
+  const setHeroPlaybackRate = () => {
+    heroVideo.defaultPlaybackRate = heroPlaybackRate;
+    heroVideo.playbackRate = heroPlaybackRate;
+  };
+
   const startHeroVideo = () => {
     heroVideo.muted = true;
+    setHeroPlaybackRate();
     const playRequest = heroVideo.play();
     if (playRequest && typeof playRequest.catch === 'function') playRequest.catch(() => {});
   };
 
+  setHeroPlaybackRate();
+  heroVideo.addEventListener('loadedmetadata', setHeroPlaybackRate, { once: true });
   startHeroVideo();
   document.addEventListener('pointerdown', startHeroVideo, { once: true, passive: true });
   document.addEventListener('touchstart', startHeroVideo, { once: true, passive: true });
