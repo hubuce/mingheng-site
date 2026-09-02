@@ -54,7 +54,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
 const heroVideo = document.querySelector('.hero-video');
 if (heroVideo) {
-  const heroPlaybackRate = 0.65;
+  const heroPlaybackRate = 0.8;
   const setHeroPlaybackRate = () => {
     heroVideo.defaultPlaybackRate = heroPlaybackRate;
     heroVideo.playbackRate = heroPlaybackRate;
